@@ -3,25 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PLOWIR</title>
+    <title>Flowers For You</title>
+    <!-- Consolidated into a single Google Fonts request -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="flower.css" />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap"
-      rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap"
-      rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
-      rel="stylesheet" />
   </head>
 
-  <body class="not-loaded">
-    <h1>To My Baby Girl</h1>
-    <p class="name">I LOVE YOU VERY VERY MUCH, BABY!!<3<br>Remember this?</p>
-    <div class="rain"></div>
-    <div class="flower" id="animation-flower">
+  <body>
+    <!-- Gift reveal overlay (replaces the blocking alert()) -->
+    <div class="reveal-overlay" id="reveal-overlay" role="dialog" aria-modal="true" aria-label="Gift message">
+      <div class="reveal-card">
+        <div class="reveal-hearts" aria-hidden="true">
+          <span>🌸</span><span>💕</span><span>🌸</span>
+        </div>
+        <p class="reveal-label">a little something for you</p>
+        <h2 class="reveal-title">This is my gift for you</h2>
+        <p class="reveal-sub">with all the love I have 🤍</p>
+        <button class="reveal-btn" id="reveal-btn" autofocus>Open My Gift</button>
+      </div>
+    </div>
+
+    <!-- Intro message (fades out after reveal) -->
+    <div class="intro" id="intro" aria-hidden="true">
+      <h1 class="intro__title">To My Baby Girl</h1>
+      <p class="intro__sub">I love you very, very much&thinsp;💕<br><span>Remember this?</span></p>
+    </div>
+
+    <!-- Rain container -->
+    <div class="rain-container" id="rain-container" aria-hidden="true"></div>
+
+    <!-- Flower vase -->
+    <div class="flower" id="animation-flower" aria-hidden="true">
       <div class="f-wrapper">
         <div class="flower__line"></div>
         <div class="f">
@@ -32,8 +47,7 @@
           <div class="flower__leaf flower__leaf--5"></div>
           <div class="flower__leaf flower__leaf--6"></div>
           <div class="flower__leaf flower__leaf--7"></div>
-          <div
-            class="flower__leaf flower__leaf--8 flower__fall-down--yellow"></div>
+          <div class="flower__leaf flower__leaf--8 flower__fall-down--yellow"></div>
         </div>
       </div>
 
@@ -47,8 +61,7 @@
           <div class="flower__leaf flower__leaf--5"></div>
           <div class="flower__leaf flower__leaf--6"></div>
           <div class="flower__leaf flower__leaf--7"></div>
-          <div
-            class="flower__leaf flower__leaf--8 flower__fall-down--pink"></div>
+          <div class="flower__leaf flower__leaf--8 flower__fall-down--pink"></div>
         </div>
       </div>
 
@@ -62,11 +75,16 @@
           <div class="flower__leaf flower__leaf--5"></div>
           <div class="flower__leaf flower__leaf--6"></div>
           <div class="flower__leaf flower__leaf--7"></div>
-          <div
-            class="flower__leaf flower__leaf--8 flower__fall-down--purple"></div>
+          <div class="flower__leaf flower__leaf--8 flower__fall-down--purple"></div>
         </div>
       </div>
+
       <div class="flower__glass"></div>
+
+      <!-- Message shown after flowers appear -->
+      <div class="flower-message" id="flower-message">
+        <p>Just like these flowers, my love for you blooms every day.</p>
+      </div>
     </div>
 
     <script src="bulaklak.js"></script>
